@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Youtube Clone</header>
+      <header className="App-header">Youtube</header>
     </div>
   );
 }
