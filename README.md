@@ -2,6 +2,15 @@
 
 > A react powered video sharing application, with styled components & functional components with hooks.
 
+## Build
+
+Refactor the starter template to suit the basic requirements of the application.
+import `react-router-dom` and `styled-components` dependencies to the build.
+
+Split the main page into menu & main components wrapped in a Container. The main component contains a Navigation component & video wrapping component.
+
+Split the Menu & Main components in 1:7 aspect ratio on the screen.
+
 ## Available Scripts
 
 In the project directory, you can run:
