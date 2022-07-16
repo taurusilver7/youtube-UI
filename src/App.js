@@ -1,30 +1,34 @@
+import { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
-import { DarkMode } from "./utlis/Theme";
+import { DarkMode, LightMode } from "./utlis/Theme";
 
 const Container = styled.div`
-  background-color: ${({ theme }) => theme.bg};
-  min-height: 100vh;
   display: flex;
-  align-items: center;
-  /* justify-content: center; */
-  color: white;
 `;
 const Main = styled.div`
   flex: 7;
-  background-color: #181818;
+  background-color: ${({ theme }) => theme.bg};
 `;
 const Wrapper = styled.div``;
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
   return (
-    <ThemeProvider theme={DarkMode}>
+    <ThemeProvider theme={darkMode ? DarkMode : LightMode}>
       <Container>
-        <Menu />
+        <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
           <Navbar />
           <Wrapper>
+            <h1>test</h1>
+            <h1>test</h1>
+            <h1>test</h1>
+            <h1>test</h1>
+            <h1>test</h1>
+            <h1>test</h1>
+            <h1>test</h1>
             <h1>test</h1>
             <h1>test</h1>
             <h1>test</h1>
