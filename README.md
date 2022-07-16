@@ -12,7 +12,9 @@ Split the Menu & Main components in 1:7 aspect ratio on the screen.
 
 - Create nav buttons in the Menu components and customize a theme provider. Creata a state to mangage the theme modes.
 
-#### Navbar
+Style the Navbar with an Input & Search styled-components. Add the sign-in button from Menu component.
+
+- Add specific routes to the project to add navigation between pages. The main routes are the index & video pages (with an video:id) identifier.
 
 ## Available Scripts
 
