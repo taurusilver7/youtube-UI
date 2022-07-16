@@ -16,6 +16,8 @@ Style the Navbar with an Input & Search styled-components. Add the sign-in butto
 
 - Add specific routes to the project to add navigation between pages. The main routes are the index & video pages (with an video:id) identifier.
 
+- Create the Card component to display the video thumbnails in the home page.
+
 ## Available Scripts
 
 In the project directory, you can run:
