@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 5px;
   font-weight: bold;
   font-style: normal;
   font-size: 16px;
@@ -49,7 +49,7 @@ const Img = styled.img`
 const Item = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 7px;
   cursor: pointer;
   padding: 0.5rem 0;
 `;
@@ -67,7 +67,7 @@ const Button = styled.button`
   background-color: transparent;
   display: flex;
   align-items: center;
-  gap: 5;
+  gap: 5px;
   border: 1px solid #3ea6ff;
   color: #3ea6ff;
   border-radius: 3px;

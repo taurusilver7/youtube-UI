@@ -46,6 +46,7 @@ const Button = styled.button`
   padding: 0.45rem 0.7rem;
   background-color: transparent;
   display: flex;
+  gap: 5px;
   align-items: center;
   border: 1px solid #3ea6ff;
   color: #3ea6ff;
