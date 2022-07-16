@@ -7,12 +7,12 @@
 Refactor the starter template to suit the basic requirements of the application.
 import `react-router-dom` and `styled-components` dependencies to the build.
 
-Split the main page into menu & main components wrapped in a Container. The main component contains a Navigation component & video wrapping component in column-flex aspect.
-
+Split the index page into Menu & Main components wrapped in a Container. The Main component holds a Navbar & Video Wrapper components.
 Split the Menu & Main components in 1:7 aspect ratio on the screen.
 
-- Create the nav buttons in menu component.
-- Create a theme provider for toggling between light & dark modes. Create a state to manage the modes in the main & menu components
+- Create nav buttons in the Menu components and customize a theme provider. Creata a state to mangage the theme modes.
+
+#### Navbar
 
 ## Available Scripts
 
