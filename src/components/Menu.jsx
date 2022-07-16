@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import logo from "../logo.png";
 
 import HomeIcon from "@mui/icons-material/Home";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
@@ -24,6 +25,7 @@ const Container = styled.div`
   height: 100vh;
   color: ${({ theme }) => theme.text};
   font-size: 14px;
+  border-right: 0.1px solid ${({ theme }) => theme.soft};
 `;
 
 const Wrapper = styled.div`
@@ -35,6 +37,8 @@ const Logo = styled.div`
   align-items: center;
   gap: 0.5rem;
   font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
   margin-bottom: 0.5rem;
 `;
 
@@ -72,18 +76,18 @@ const Button = styled.button`
 `;
 
 const Title = styled.h2`
-font-size: 12px;
-font-weight: 500;
-color: #aaa;
-margin-bottom: 5px;
-`
+  font-size: 12px;
+  font-weight: 500;
+  color: #aaa;
+  margin-bottom: 5px;
+`;
 
 const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
         <Logo>
-          <Img src="logo.png" alt=""></Img>
+          <Img src={logo} alt="logo"></Img>
           Inshot Premiere
         </Logo>
         <Item>
@@ -107,9 +111,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
           </Button>
         </Login>
         <Hr />
-        <Title>
-          Best of Inshot
-        </Title>
+        <Title>Best of Inshot</Title>
         <Item>
           <VideoLibraryOutlinedIcon />
           Library
