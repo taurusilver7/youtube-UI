@@ -11,10 +11,12 @@ const Container = styled.div`
   display: flex;
 `;
 const Main = styled.div`
-  flex: 7;
+  flex: 8.5;
   background-color: ${({ theme }) => theme.bgDark};
 `;
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  padding: 20px 10px;
+`;
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
