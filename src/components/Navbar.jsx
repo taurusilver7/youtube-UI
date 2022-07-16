@@ -27,7 +27,7 @@ const Search = styled.div`
   right: 30%;
   margin: auto;
   gap: 5;
-  background-color: ${({ theme }) => theme.textSoft};
+  background-color: ${({ theme }) => theme.soft};
   justify-content: space-between;
   padding: 5px;
   border-radius: 3px;
@@ -36,6 +36,7 @@ const Input = styled.input`
   width: 90%;
   border: none;
   outline: none;
+  font-size: 16px;
   background-color: ${({ theme }) => theme.bgLight};
   padding: 10px 15px;
   color: ${({ theme }) => theme.textSoft};
@@ -63,7 +64,9 @@ const Navbar = () => {
             <SearchOutlinedIcon />
             <Input />
           </Search>
-          <MicOutlinedIcon />
+          <MicOutlinedIcon
+            style={{ padding: "10px 10px 0 0", color: "#3ea6ff" }}
+          />
         </>
         <Button>
           <AccountCircleOutlinedIcon />

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../logo.png";
+import { Link } from "react-router-dom";
 
 import HomeIcon from "@mui/icons-material/Home";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
@@ -20,12 +21,12 @@ import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightne
 const Container = styled.div`
   position: sticky;
   top: 0;
-  flex: 1.5;
+  flex: 1.75;
   background-color: ${({ theme }) => theme.bg};
   height: 100vh;
   color: ${({ theme }) => theme.text};
   font-size: 14px;
-  border-right: 0.1px solid ${({ theme }) => theme.soft};
+  /* border-right: 0.1px solid ${({ theme }) => theme.soft}; */
 `;
 
 const Wrapper = styled.div`
@@ -38,7 +39,7 @@ const Logo = styled.div`
   gap: 0.5rem;
   font-weight: bold;
   font-style: normal;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 0.5rem;
 `;
 
@@ -86,10 +87,13 @@ const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={logo} alt="logo"></Img>
-          Inshot Premiere
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none", color: 'inherit' }}>
+          <Logo>
+            <Img src={logo} alt="logo"></Img>
+            Inshot Premiere
+          </Logo>
+        </Link>
+
         <Item>
           <HomeIcon />
           Home
