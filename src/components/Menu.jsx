@@ -8,23 +8,22 @@ import VideoLibraryOutlinedIcon from "@mui/icons-material/VideoLibraryOutlined";
 import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
-import LiveTvOutlinedIcon from "@mui/icons-material/LiveTvOutlined";
-import SportsBasketballOutlinedIcon from "@mui/icons-material/SportsBasketballOutlined";
 import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined";
 import LibraryMusicOutlinedIcon from "@mui/icons-material/LibraryMusicOutlined";
 
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
+import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
 
 const Container = styled.div`
   position: sticky;
   top: 0;
-  flex: 1;
+  flex: 1.5;
   background-color: ${({ theme }) => theme.bg};
   height: 100vh;
   color: ${({ theme }) => theme.text};
-  font-size: 15px;
+  font-size: 14px;
 `;
 
 const Wrapper = styled.div`
@@ -35,7 +34,8 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 `;
 
 const Img = styled.img`
@@ -44,13 +44,13 @@ const Img = styled.img`
 const Item = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   cursor: pointer;
   padding: 0.5rem 0;
 `;
 
 const Hr = styled.hr`
-  margin: 10px 0px;
+  margin: 5px 0px;
   border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
@@ -71,7 +71,14 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Menu = () => {
+const Title = styled.h2`
+font-size: 12px;
+font-weight: 500;
+color: #aaa;
+margin-bottom: 5px;
+`
+
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
@@ -99,6 +106,10 @@ const Menu = () => {
             Sign in
           </Button>
         </Login>
+        <Hr />
+        <Title>
+          Best of Inshot
+        </Title>
         <Item>
           <VideoLibraryOutlinedIcon />
           Library
@@ -115,15 +126,9 @@ const Menu = () => {
           <SportsEsportsOutlinedIcon />
           Gaming
         </Item>
-        <Item>
-          <SportsBasketballOutlinedIcon />
-          Sports
-        </Item>
+
         <Hr />
-        <Item>
-          <LiveTvOutlinedIcon />
-          Live
-        </Item>
+
         <Item>
           <SettingsOutlinedIcon />
           Settings
@@ -135,6 +140,10 @@ const Menu = () => {
         <Item>
           <HelpOutlineOutlinedIcon />
           Help
+        </Item>
+        <Item onClick={() => setDarkMode(!darkMode)}>
+          <SettingsBrightnessOutlinedIcon />
+          {darkMode ? "Light" : "Dark"} mode
         </Item>
       </Wrapper>
     </Container>
