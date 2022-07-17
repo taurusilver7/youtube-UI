@@ -3,23 +3,25 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
-  width: 360px;
-  margin-bottom: 45px;
+  width: ${(props) => props.type !== "sm" && "360px"};
+  margin-bottom: ${(props) => (props.type === "sm" ? "10px" : "45px")};
   cursor: pointer;
+  display: ${(props) => props.type === "sm" && "flex"};
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 202px;
+  width: ${(props) => (props.type === "sm" ? "50%" : "100%")};
+  height: ${(props) => (props.type === "sm" ? "100px" : "200px")};
   background-color: #999;
+  flex: 1;
 `;
 
 const Details = styled.div`
   display: flex;
-  align-items: flex-start;
-  margin-top: 16px;
+  margin-top: ${(props) => props.type !== "sm" && "16px"};
   padding: 1px 5px;
   gap: 12px;
+  flex: 1;
 `;
 
 const ChannelImg = styled.img`
@@ -27,6 +29,7 @@ const ChannelImg = styled.img`
   height: 36px;
   border-radius: 50%;
   background-color: #999;
+  display: ${(props) => props.type === "sm" && "none"};
 `;
 
 const Texts = styled.div`
@@ -49,17 +52,20 @@ const Info = styled.div`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const Card = () => {
+const Card = ({ type }) => {
   return (
     <Link to="/videos/test" style={{ textDecoration: "none" }}>
-      <Container>
-        <Image src="https://i.ytimg.com/vi/C5fLxtJH2Qs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAxwLHjOgAxes1042xYKq8bl_oV1A" />
-        <Details>
-          <ChannelImg />
+      <Container type={type}>
+        <Image
+          type={type}
+          src="https://i.ytimg.com/vi/C5fLxtJH2Qs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAxwLHjOgAxes1042xYKq8bl_oV1A"
+        />
+        <Details type={type}>
+          <ChannelImg type={type} />
           <Texts>
-            <Title>Video name</Title>
-            <Channel>Channel Name</Channel>
-            <Info>views number & publish date</Info>
+            <Title>NCS Audio music for coding.</Title>
+            <Channel>Lama Dev</Channel>
+            <Info>64k views & publish date</Info>
           </Texts>
         </Details>
       </Container>

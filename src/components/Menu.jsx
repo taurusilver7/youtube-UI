@@ -52,6 +52,10 @@ const Item = styled.div`
   gap: 7px;
   cursor: pointer;
   padding: 0.5rem 0;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+  }
 `;
 
 const Hr = styled.hr`
@@ -87,7 +91,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
-        <Link to="/" style={{ textDecoration: "none", color: 'inherit' }}>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <Logo>
             <Img src={logo} alt="logo"></Img>
             Inshot Premiere

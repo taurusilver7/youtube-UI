@@ -40,7 +40,7 @@ const Info = styled.div`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const Card = () => {
+const CardAlt = () => {
   return (
     <Link to="/videos/test" style={{ textDecoration: "none" }}>
       <Container>
@@ -55,4 +55,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default CardAlt;
