@@ -113,10 +113,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Hr />
         <Login>
           Sign in to like, comment & subscribe
-          <Button>
-            <AccountCircleOutlinedIcon />
-            Sign in
-          </Button>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <Button>
+              <AccountCircleOutlinedIcon />
+              Sign in
+            </Button>
+          </Link>
         </Login>
         <Hr />
         <Title>Best of Inshot</Title>

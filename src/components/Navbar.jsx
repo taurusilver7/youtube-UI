@@ -3,12 +3,13 @@ import styled from "styled-components";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import MicOutlinedIcon from "@mui/icons-material/MicOutlined";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   position: sticky;
   top: 0;
   background-color: ${({ theme }) => theme.bg};
-  height: 62px;
+  height: 60px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -69,10 +70,12 @@ const Navbar = () => {
             style={{ padding: "10px 10px 0 0", color: "#3ea6ff" }}
           />
         </>
-        <Button>
-          <AccountCircleOutlinedIcon />
-          Sign in
-        </Button>
+        <Link to="/login" style={{ textDecoration: "none" }}>
+          <Button>
+            <AccountCircleOutlinedIcon />
+            Sign in
+          </Button>
+        </Link>
       </Wrapper>
     </Container>
   );
