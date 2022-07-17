@@ -18,6 +18,18 @@ Style the Navbar with an Input & Search styled-components. Add the sign-in butto
 
 - Create the Card component to display the video thumbnails in the home page.
 
+- Specify the routes for navigating between the home & videos pages using the Link elements.
+- Style the Video component, add the features into the components.
+- Create a comments wrappers, and an induvidual comment component.
+
+- The Recommendation section has video thumbnails as in the home page, but in horizontal display. Use props to change the orientation of the component and other minor adjustments.
+
+Custom utility class: `display: ${(props) => props.type === 'sm' && "flex"}`
+
+- Add hover effects on menu buttons.
+
+## Login Component
+
 ## Available Scripts
 
 In the project directory, you can run:
