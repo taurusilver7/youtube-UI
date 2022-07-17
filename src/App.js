@@ -6,6 +6,7 @@ import { DarkMode, LightMode } from "./utils/Theme";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Video from "./pages/Video";
+import Login from "./pages/Login";
 
 const Container = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ function App() {
             <Routes>
               <Route path="/">
                 <Route index element={<Home />} />
+                <Route path="login" element={<Login />} />
                 <Route path="videos">
                   <Route path=":id" element={<Video />} />
                 </Route>
