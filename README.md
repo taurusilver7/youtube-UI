@@ -30,6 +30,8 @@ Custom utility class: `display: ${(props) => props.type === 'sm' && "flex"}`
 
 ## Login Component
 
+- Add a route to the routes for Login page. Create a login page in the pages. Style the input fields in the login form.
+
 ## Available Scripts
 
 In the project directory, you can run:
