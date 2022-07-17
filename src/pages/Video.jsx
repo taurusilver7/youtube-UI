@@ -6,7 +6,6 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import Comments from "../components/Comments";
-import CardAlt from "../components/CardAlt";
 import Card from "../components/Card";
 
 const Container = styled.div`
@@ -156,10 +155,9 @@ const Video = () => {
         <Comments />
       </Content>
       <Recommendation>
-      <Card type="sm" />
-        <CardAlt />
-        <CardAlt />
-        <CardAlt />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
       </Recommendation>
     </Container>
   );
