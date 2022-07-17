@@ -26,11 +26,11 @@ Style the Navbar with an Input & Search styled-components. Add the sign-in butto
 
 Custom utility class: `display: ${(props) => props.type === 'sm' && "flex"}`
 
-- Add hover effects on menu buttons.
+- Add hover effects on menu buttons in the home page.
 
 ## Login Component
 
-- Add a route to the routes for Login page. Create a login page in the pages. Style the input fields in the login form.
+- Add a route to the routes for Login page. Create a login page in the pages. Style the login form for sign-in and register fields in the login form with styled-components.
 
 ## Available Scripts
 
