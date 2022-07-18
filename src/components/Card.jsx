@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { format } from "timeago.js";
+import axios from "axios";
 
 const Container = styled.div`
   width: ${(props) => props.type !== "sm" && "360px"};
@@ -52,20 +54,30 @@ const Info = styled.div`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const Card = ({ type }) => {
+const Card = ({ type, video }) => {
+  const [channel, setChannel] = useState({});
+  useEffect(() => {
+    const fetchChannel = async () => {
+      const res = await axios.get(`/users/find/${video.userId}`);
+      setChannel(res.data);
+    };
+    return () => {
+      fetchChannel();
+    };
+  }, [video.userId]);
+
   return (
     <Link to="/videos/test" style={{ textDecoration: "none" }}>
       <Container type={type}>
-        <Image
-          type={type}
-          src="https://i.ytimg.com/vi/C5fLxtJH2Qs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAxwLHjOgAxes1042xYKq8bl_oV1A"
-        />
+        <Image type={type} src={video?.imgUrl} />
         <Details type={type}>
-          <ChannelImg type={type} />
+          <ChannelImg type={type} src={channel.img} />
           <Texts>
-            <Title>NCS Audio music for coding.</Title>
-            <Channel>Lama Dev</Channel>
-            <Info>64k views & publish date</Info>
+            <Title>{video.title}</Title>
+            <Channel>{channel.name}</Channel>
+            <Info>
+              {video?.views} views · {format(video?.createdAt)}
+            </Info>
           </Texts>
         </Details>
       </Container>
