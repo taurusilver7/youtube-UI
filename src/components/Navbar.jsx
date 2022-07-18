@@ -58,13 +58,15 @@ const Button = styled.button`
 `;
 
 const Navbar = () => {
+
+  
   return (
     <Container>
       <Wrapper>
         <>
           <Search>
-            <SearchOutlinedIcon />
             <Input />
+            <SearchOutlinedIcon />
           </Search>
           <MicOutlinedIcon
             style={{ padding: "10px 10px 0 0", color: "#3ea6ff" }}
