@@ -32,6 +32,18 @@ Custom utility class: `display: ${(props) => props.type === 'sm' && "flex"}`
 
 - Add a route to the routes for Login page. Create a login page in the pages. Style the login form for sign-in and register fields in the login form with styled-components.
 
+## UI - Server.
+
+- Create a state to manage the fetched videos from the server & a useEffect() to fetch the data on refresh.
+
+- Map the fetched items into the Card component, and populate the data-values in the component.
+
+- Import axios and fetch the data from server API endpoint. Create a proxy in the package.json to avoid repetetions.
+
+- Add two more paths to the App (trends & sub) and add the route paths in the Menu component. If the axios fetch doesn't respond to the proxy, restart the react-app to kickstart the server to link up with the react-application.
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
