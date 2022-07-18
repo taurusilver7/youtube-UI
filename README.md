@@ -42,7 +42,12 @@ Custom utility class: `display: ${(props) => props.type === 'sm' && "flex"}`
 
 - Add two more paths to the App (trends & sub) and add the route paths in the Menu component. If the axios fetch doesn't respond to the proxy, restart the react-app to kickstart the server to link up with the react-application.
 
+- Implement the sign-in function on the UI. create pieces of states for every input field & populate the values to an handler function.
 
+- The handler function fires a post request to the server to provide with the user data to the UI.
+  To populate the user information in various no-linking components, a context-api, or a global state-management is imported.
+
+### Redux-toolkit.
 
 ## Available Scripts
 
