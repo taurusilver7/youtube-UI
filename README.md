@@ -49,6 +49,31 @@ Custom utility class: `display: ${(props) => props.type === 'sm' && "flex"}`
 
 ### Redux-toolkit.
 
+- Create a userSlice in /redux directory. Import the [redux-toolkit](https://redux-toolkit.js.org/) dependency.
+
+- Create a redux store in `/app/store.js`. Import the configuration API from redux toolkit.
+- Make the redux store available to react by putting a react-redux provider around the application `App` in `src/index.js`. Pass the store as props in the Provider.
+
+- Create a redux state slice in `/redux/userSlice.js` & import createSlice method from redux-toolkit.
+- Create an initial state to the store. The initial state of the user is null, and upon fetching the data from the login page, update the state of the user. On failure, an error is displayed.
+
+- Create reducer actions {loginStart, loginSuccess, loginFailure, logout} and assign corresponding state and action.payload to them.
+
+- Add the userReducer to the redux store. And fire the dispatch events in the handleLogin function in Login page.
+
+- The actions dispatched changes the initial state with a user data. Analyze the state changes in Redux toolkit google extension.
+
+- Use the currentUser state data in several unrelated components (far away non-child components) - Navbar & Menu.
+- Change the Avatar image, currentUser name in the Navbar. Add an video create button. Hide the login block in the Menu component.
+
+- Import `redux-persist` library to make persistant user login. Import the necessary middlewares to persist the function, and make the store persist with a persisitor from the library.
+
+- Wrap the App component with persistStore & add the persistor as props. The application will remain persistant with te login.
+
+- Create a videoSlice in the store for handling video related actions.
+
+- To add google Authentcation to the project, add a firebase project and google Provider to the react application.
+
 ## Available Scripts
 
 In the project directory, you can run:
