@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../logo.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import HomeIcon from "@mui/icons-material/Home";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
@@ -88,6 +89,7 @@ const Title = styled.h2`
 `;
 
 const Menu = ({ darkMode, setDarkMode }) => {
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <Container>
       <Wrapper>
@@ -117,16 +119,20 @@ const Menu = ({ darkMode, setDarkMode }) => {
             Subscriptions
           </Item>
         </Link>
-        <Hr />
-        <Login>
-          Sign in to like, comment & subscribe
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <Button>
-              <AccountCircleOutlinedIcon />
-              Sign in
-            </Button>
-          </Link>
-        </Login>
+        {!currentUser && (
+          <>
+            <Hr />
+            <Login>
+              Sign in to like, comment & subscribe
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                <Button>
+                  <AccountCircleOutlinedIcon />
+                  Sign in
+                </Button>
+              </Link>
+            </Login>
+          </>
+        )}
         <Hr />
         <Title>Best of Inshot</Title>
         <Item>
@@ -147,6 +153,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
 
         <Hr />
+        <Title>Need Assitance</Title>
 
         <Item>
           <SettingsOutlinedIcon />
