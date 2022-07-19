@@ -15,7 +15,8 @@ import Card from "../components/Card";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSuccess } from "../redux/videoSlice";
+import { dislike, fetchSuccess, like } from "../redux/videoSlice";
+import { subscribe } from "../redux/userSlice";
 import { format } from "timeago.js";
 
 const Container = styled.div`
@@ -55,6 +56,7 @@ const Buttons = styled.div`
 const Button = styled.button`
   display: flex;
   align-items: center;
+  cursor: pointer;
   color: ${({ theme }) => theme.textSoft};
   background-color: transparent;
   border: none;
@@ -141,20 +143,36 @@ const Video = () => {
     };
   }, [path, dispatch]);
 
+  const handleLike = async () => {
+    await axios.put(`/users/like/${currentVideo._id}`);
+    dispatch(like(currentUser._id));
+  };
+  const handleDislike = async () => {
+    console.log("Dispatch Fired");
+    await axios.put(`/users/disike/${currentVideo._id}`);
+    dispatch(dislike(currentUser._id));
+  };
+
+  const handleSubscribe = async () => {
+    currentUser.subscribedUsers?.includes(channel._id)
+      ? await axios.put(`/users/unsub/${channel._id}`)
+      : await axios.put(`/users/sub/${channel._id}`);
+    dispatch(subscribe(channel._id));
+  };
+
   return (
     <Container>
       <Content>
         <VideoWrapper>
-          {/* <VideoFrame src={currentVideo?.videoUrl} controls /> */}
-          <iframe
+          <VideoFrame src={currentVideo?.videoUrl} controls />
+          {/* <iframe
             width="100%"
             height="400"
             src="https://www.youtube.com/embed/k3Vfj-e1Ma4"
-            title="Youtube video player"
-            frameborder="0"
-            allowfullscreen
-            allow="accelerometer; autoplay; clipboard-written; encrypted-media; gyroscope; picture-in-picture"
-          ></iframe>
+            title="Youtube Video Player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe> */}
         </VideoWrapper>
         <Title>{currentVideo?.title}</Title>
         <Details>
@@ -162,7 +180,7 @@ const Video = () => {
             {currentVideo?.views} views · {format(currentVideo?.createdAt)}
           </Info>
           <Buttons>
-            <Button>
+            <Button onClick={handleLike}>
               {currentVideo?.likes?.includes(currentUser?._id) ? (
                 <ThumbUpIcon />
               ) : (
@@ -170,7 +188,7 @@ const Video = () => {
               )}
               {currentVideo?.likes?.length}
             </Button>
-            <Button>
+            <Button onClick={handleDislike}>
               {currentVideo?.dislikes?.includes(currentUser?._id) ? (
                 <ThumbDownIcon />
               ) : (
@@ -201,10 +219,14 @@ const Video = () => {
               <Description>{currentVideo?.description}</Description>
             </ChannelDetail>
           </ChannelInfo>
-          <Subscribe>SUBSCRIBE</Subscribe>
+          <Subscribe onClick={handleSubscribe}>
+            {currentUser.subscribedUsers?.includes(channel._id)
+              ? "SUBSCRIBED"
+              : "SUBSCRIBE"}
+          </Subscribe>
         </Channel>
         <Hr />
-        <Comments />
+        <Comments videoId={currentVideo._id} />
       </Content>
       <Recommendation>
         {/* <Card type="sm" />
