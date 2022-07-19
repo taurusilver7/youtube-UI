@@ -70,9 +70,11 @@ Custom utility class: `display: ${(props) => props.type === 'sm' && "flex"}`
 
 - Wrap the App component with persistStore & add the persistor as props. The application will remain persistant with te login.
 
-- Create a videoSlice in the store for handling video related actions.
+- To add google Authentcation to the project, add a firebase project and google Provider to the react application. Post the user details to the server, to create the sign-in method with google in the auth controller.
 
-- To add google Authentcation to the project, add a firebase project and google Provider to the react application.
+- Create a videoSlice in the store for handling video related actions.
+- In the Video page, employ useLocation() hook from react-router-dom to trace the url path. split the path name to get the video_url into the recommandation cards.
+- Set two states to manage the video & channels, and fetch the data from server.
 
 ## Available Scripts
 
