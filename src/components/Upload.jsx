@@ -173,7 +173,7 @@ const Upload = ({ setOpen }) => {
           placeholder="Separate the tags with commas."
           onChance={handleTags}
         />
-        <Label>Image:</Label>
+        <Label>Image Cover:</Label>
         {imgPerc > 0 ? (
           "Uploading:" + imgPerc + "%"
         ) : (
