@@ -67,14 +67,14 @@ const Card = ({ type, video }) => {
   }, [video.userId]);
 
   return (
-    <Link to="/videos/test" style={{ textDecoration: "none" }}>
+    <Link to={`/videos/${video._id}`} style={{ textDecoration: "none" }}>
       <Container type={type}>
         <Image type={type} src={video?.imgUrl} />
         <Details type={type}>
-          <ChannelImg type={type} src={channel.img} />
+          <ChannelImg type={type} src={channel?.image} alt="" />
           <Texts>
             <Title>{video.title}</Title>
-            <Channel>{channel.name}</Channel>
+            <Channel>{channel?.name}</Channel>
             <Info>
               {video?.views} views · {format(video?.createdAt)}
             </Info>

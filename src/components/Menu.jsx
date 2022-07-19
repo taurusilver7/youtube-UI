@@ -153,7 +153,6 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
 
         <Hr />
-        <Title>Need Assitance</Title>
 
         <Item>
           <SettingsOutlinedIcon />

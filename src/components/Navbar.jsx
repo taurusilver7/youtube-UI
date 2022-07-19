@@ -96,8 +96,8 @@ const Navbar = () => {
           <User>
             <VideoCallOutlinedIcon />
             <NotificationsOutlinedIcon />
-            <Avatar />
-            {currentUser.name}
+            <Avatar src={currentUser?.image} />
+            {currentUser?.name}
           </User>
         ) : (
           <Link to="/login" style={{ textDecoration: "none" }}>
