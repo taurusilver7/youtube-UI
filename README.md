@@ -76,6 +76,12 @@ Custom utility class: `display: ${(props) => props.type === 'sm' && "flex"}`
 - In the Video page, employ useLocation() hook from react-router-dom to trace the url path. split the path name to get the video_url into the recommandation cards.
 - Set two states to manage the video & channels, and fetch the data from server.
 
+The fetched video data would not be called from the state variable, because it would lead to continous refreshing to update the state (likes, dislikes) on the video. A videoSlice to dispatch actions was preferred.
+
+Update the videoSlice state wth the fetched data. Populate the fetched data in Video component in fields, except for the video iframe element. Youtube videos are subjected to company policy and are not allowed to be used outside the site. But embeded videos could be used from youtube api.
+
+- Create the like & dislike dispatch functions to populate the number of likes & dislikes of a video from all the users.
+
 ## Available Scripts
 
 In the project directory, you can run:
