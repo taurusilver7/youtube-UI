@@ -80,7 +80,11 @@ The fetched video data would not be called from the state variable, because it w
 
 Update the videoSlice state wth the fetched data. Populate the fetched data in Video component in fields, except for the video iframe element. Youtube videos are subjected to company policy and are not allowed to be used outside the site. But embeded videos could be used from youtube api.
 
-- Create the like & dislike dispatch functions to populate the number of likes & dislikes of a video from all the users.
+- Create the like & dislike handler functions in the Video component, with their relevant fetch request paths. The new results (likes) are only displayed after a database refresh (refetch the likes). To prevent, dispatch an action to update the like state in the videoSlice.
+
+- Check if the current user has liked the video. Only add the currentUser.\_id into the likes array, and remove the id from the array on dislike action.
+
+- Verfity if the current user has subscribed to the channel, and create a subscribed action in the videoSlice.
 
 ## Available Scripts
 
